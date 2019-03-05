@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import styled from 'styled-components'
 
-import FeedItemsIfHasBeenLoaded from './FeedItemsIfHasBeenLoaded'
+import FeedItemsIfLoaded from './FeedItemsIfLoaded'
 import { request } from './../utils'
 
 const Container = styled.section`
@@ -42,7 +42,7 @@ const SocialFeed = ({ url, limit, interval }) => {
 
   return (
     <Container>
-      <FeedItemsIfHasBeenLoaded feed={feed} />
+      <FeedItemsIfLoaded feed={feed} />
     </Container>
   )
 }

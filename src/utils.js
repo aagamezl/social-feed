@@ -5,8 +5,8 @@
  * @param {object} format
  * @returns {string}
  */
-export const formatDate = (time, format) => {
-  return new Intl.DateTimeFormat('default', format || {
+export const formatDate = (time, format, locale = 'default') => {
+  return new Intl.DateTimeFormat(locale, format || {
     hour12: false,
     year: '2-digit',
     month: '2-digit',
