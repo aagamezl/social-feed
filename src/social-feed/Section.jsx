@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 
@@ -13,7 +14,7 @@ const Title = styled.span`
 
   @media (min-width: 1281px) {
     &:after {
-      content: ":";
+      content: ": ";
     }
 
     display: inline;
@@ -21,7 +22,7 @@ const Title = styled.span`
   }
 `;
 
-const SectionContent= styled.div`
+const SectionContent = styled.div`
   margin-bottom: 15px;
   font-size: 24px;
 
@@ -31,10 +32,21 @@ const SectionContent= styled.div`
   }
 `;
 
-const Section = (props) => {
+const Section = ({ title, children }) => {
   return (
-    <SectionContent><Title>{props.title}</Title> {props.content}</SectionContent>
+    <SectionContent>
+      <Title>{title}</Title>
+      <span>{children}</span>
+    </SectionContent>
   )
+}
+
+Section.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.object.isRequired,
+    PropTypes.string.isRequired,
+  ])
 }
 
 export default Section

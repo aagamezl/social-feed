@@ -2,7 +2,7 @@ import React from 'react'
 
 import styled from 'styled-components'
 
-const loaderSize = 128;
+import { loaderSize } from './constants'
 
 const Loader = styled.div`
   display: inline-block;
@@ -34,7 +34,7 @@ const Loader = styled.div`
   }
 `
 
-const Loading = (props) => {
+const Loading = () => {
   return (
     <Loader />
   )

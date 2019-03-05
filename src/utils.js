@@ -16,3 +16,10 @@ export const formatDate = (time, format) => {
     second: '2-digit'
   }).format(time).replace(',', '')
 }
+
+export const request = async (url, limit) => {
+  const response = await fetch(url.replace('{limit}', limit)) /* global fetch */
+  const json = await response.json()
+
+  return json
+}
